@@ -1,5 +1,6 @@
 var currentDay=document.getElementById("#currentDay")
 var currentTime;
+displayData();
 
 //Time interval
 var clock=setInterval(updateTime, 1000)
@@ -32,7 +33,28 @@ function checkTime() {
     }
 }
 
-function saveData() {
-    var time
-    var schedule
+function saveData(event) {
+    var time=$(event.target).parent().attr("id");
+    var schedule=$(event.target).siblings(".text").val();
+
+    if(schedule==="") {
+        window.alert("Please type into text field to save")
+    } else { localStorage.setItem(time,schedule);
+    window.alert("Saved!");
+    }
+
+}
+
+$(".saveBtn").click(saveData);
+
+function displayData() {
+    $("#9 .text").val(localStorage.getItem("9"));
+    $("#10 .text").val(localStorage.getItem("10"));
+    $("#11 .text").val(localStorage.getItem("11"));
+    $("#12 .text").val(localStorage.getItem("12"));
+    $("#13 .text").val(localStorage.getItem("13"));
+    $("#14 .text").val(localStorage.getItem("14"));
+    $("#15 .text").val(localStorage.getItem("15"));
+    $("#16 .text").val(localStorage.getItem("16"));
+    $("#17 .text").val(localStorage.getItem("17"));
 }
