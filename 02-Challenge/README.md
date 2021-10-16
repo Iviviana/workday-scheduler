@@ -30,7 +30,7 @@ The scheduler now appears as below, it saves the data to the users local storage
 
 
 ## Contributers
-
+[Antonia Garcia](https://github.com/Iviviana)
 
 
 
